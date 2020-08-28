@@ -1,39 +1,37 @@
 import React from 'react';
-import "./index.css";
+import Header from "./Header";
 
 function App() {
   return (
-    <body class="body">
-      <header class="header">
-        <h1 class="header__title">Kalkulator walut</h1>
-      </header>
-      <form class="conventer">
-        <label class="conventer__label">
-          Kwota: <input class="conventer__input js-initial" type="number" min="0" required />
+    <body className="body">
+      <Header title = "Kalkulator walut" />
+      <form className="conventer">
+        <label className="conventer__label">
+          Kwota: <input className="conventer__input" type="number" min="0" required />
         </label>
-        <label class="conventer__label">
+        <label className="conventer__label">
           Z:
-            <select class="conventer__select js-from" name="currency" required>
+            <select className="conventer__select" name="currency" required>
             <option value="PLN">PLN</option>
             <option value="EUR">EUR</option>
             <option value="USD">USD</option>
             <option value="CZK">CZK</option>
           </select></label>
-        <label class="conventer__label">
+        <label className="conventer__label">
           Na:
-            <select class="conventer__select js-to" name="currency" required>
+            <select className="conventer__select" name="currency" required>
             <option value="PLN">PLN</option>
             <option value="EUR">EUR</option>
             <option value="USD">USD</option>
             <option value="CZK">CZK</option>
           </select>
         </label>
-        <button class="conventer__button">Przelicz</button>
+        <button className="conventer__button">Przelicz</button>
       </form>
-      <div class="conventer__result"></div>
-      <footer class="footer">
-        <div class="footer__div">
-          <p class="footer__paragraph">Pozdrawiam i życzę miłego dnia - Olga ;*</p>
+      <div className="conventer__result"></div>
+      <footer className="footer">
+        <div className="footer__div">
+          <p className="footer__paragraph">Pozdrawiam i życzę miłego dnia - Olga ;*</p>
         </div>
       </footer>
     </body>
