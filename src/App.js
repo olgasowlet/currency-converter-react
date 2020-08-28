@@ -1,9 +1,10 @@
 import React from 'react';
 import Header from "./Header";
+import Footer from "./Footer";
 
 function App() {
   return (
-    <body className="body">
+    <main className="main">
       <Header title = "Kalkulator walut" />
       <form className="conventer">
         <label className="conventer__label">
@@ -29,12 +30,8 @@ function App() {
         <button className="conventer__button">Przelicz</button>
       </form>
       <div className="conventer__result"></div>
-      <footer className="footer">
-        <div className="footer__div">
-          <p className="footer__paragraph">Pozdrawiam i życzę miłego dnia - Olga ;*</p>
-        </div>
-      </footer>
-    </body>
+      <Footer />
+    </main>
   );
 }
 
