@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.css";
+import Result from "./Result";
 
 const Form = (props) => (
     <form className="conventer">
@@ -24,6 +25,7 @@ const Form = (props) => (
             </select>
         </label>
         <button className="conventer__button">Przelicz</button>
+        <Result />
     </form>
 );
 
