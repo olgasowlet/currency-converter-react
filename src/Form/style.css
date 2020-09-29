@@ -14,6 +14,7 @@
     border: 1px solid #fabc2a;
     width: 100px;
     margin-bottom: 20px;
+    margin-left: 7px;
     height: 40px;
 }
 
@@ -60,6 +61,7 @@
         height: unset;
         font-size: 20px;
         margin: 0px;
+        margin-left: 6px;
     }
     .conventer__button {
         margin-bottom: 10px;
