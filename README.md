@@ -1,6 +1,6 @@
 #Currency converter made in React
 
-Project was created as a matter of YouCode course
+Project was created as a part of YouCode course
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
