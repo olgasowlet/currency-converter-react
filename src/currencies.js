@@ -1,18 +1,18 @@
 export const currencies = [
     {
-        value="PLN",
+        value = "PLN",
         rate = 1,
     },
     {
-        value="EUR",
+        value = "EUR",
         rate = 4.4,
     },
     {
-        value="CZK",
+        value = "CZK",
         rate = 0.16,
     },
     {
-        value="USD",
+        value = "USD",
         rate = 3.7,
     },
 ];
