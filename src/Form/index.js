@@ -67,7 +67,7 @@ const Form = (props) => {
                 </select>
             </label>
             <button className="conventer__button">Przelicz</button>
-            <Result result={result} />
+            <Result result={result} toCurrency={toCurrency} />
         </form>
     );
 };
