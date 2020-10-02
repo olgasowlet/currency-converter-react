@@ -1,19 +1,14 @@
 import React, { useState } from "react";
 import "./style.css";
 import Result from "./Result";
+import { currencies } from "../currencies";
 
 const Form = (props) => {
 
     const [amount, setAmount] = useState(0);
     const [fromCurrency, setFromCurrency] = useState("");
     const [toCurrency, setToCurrency] = useState("");
-
-    const onFormSubmit = (event) => {
-        event.preventDefault();
-        console.log(`Kwota: ${amount}`);
-        console.log(`Z waluty: ${fromCurrency}`);
-        console.log(`Na walute: ${toCurrency}`);
-    };
+    const [result, setResult] = useState(0);
 
     const onInputChange = ({ target }) => setAmount(target.value);
 
@@ -24,6 +19,29 @@ const Form = (props) => {
     const onSecondSelectChange = ({ target }) => {
         setToCurrency(target.value);
     };
+
+    const calculateCurrency = (fromCurrency, toCurrency, amount) => {
+
+        for (const currency of currencies) {
+            let rate = currency.rate;
+
+            if (fromCurrency === currency.value) {
+                amount *= rate;
+            };
+
+            if (toCurrency === currency.value) {
+                amount = amount / rate;
+            };
+        };
+        return setResult(result => result = amount);
+    };
+
+    const onFormSubmit = (event) => {
+        event.preventDefault();
+
+        calculateCurrency(fromCurrency, toCurrency, amount);
+    };
+
 
 
     return (
@@ -49,7 +67,7 @@ const Form = (props) => {
                 </select>
             </label>
             <button className="conventer__button">Przelicz</button>
-            <Result />
+            <Result result={result} />
         </form>
     );
 };
