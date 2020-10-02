@@ -12,16 +12,11 @@ const Form = (props) => {
 
     const onInputChange = ({ target }) => setAmount(target.value);
 
-    const onFirstSelectChange = ({ target }) => {
-        setFromCurrency(target.value);
-    };
+    const onFirstSelectChange = ({ target }) => setFromCurrency(target.value);
 
-    const onSecondSelectChange = ({ target }) => {
-        setToCurrency(target.value);
-    };
+    const onSecondSelectChange = ({ target }) => setToCurrency(target.value);
 
     const calculateCurrency = (fromCurrency, toCurrency, amount) => {
-
         for (const currency of currencies) {
             let rate = currency.rate;
 
@@ -33,7 +28,7 @@ const Form = (props) => {
                 amount = amount / rate;
             };
         };
-        return setResult(result => result = amount);
+        return setResult(amount);
     };
 
     const onFormSubmit = (event) => {
@@ -41,8 +36,6 @@ const Form = (props) => {
 
         calculateCurrency(fromCurrency, toCurrency, amount);
     };
-
-
 
     return (
         <form className="conventer" onSubmit={onFormSubmit}>
@@ -52,20 +45,17 @@ const Form = (props) => {
             <label className="conventer__label">
                 Z:
             <select className="conventer__select" value={fromCurrency} onChange={onFirstSelectChange} name="currency" required>
-                    <option value="PLN">PLN</option>
-                    <option value="EUR">EUR</option>
-                    <option value="USD">USD</option>
-                    <option value="CZK">CZK</option>
-                </select></label>
+                    {currencies.map(currency => (
+                        <option key={currency.value} value={currency.value}>{currency.value}</option>
+                    ))}
+            </select></label>
             <label className="conventer__label">
                 Na:
             <select className="conventer__select" value={toCurrency} onChange={onSecondSelectChange} name="currency" required>
-                    <option value="PLN">PLN</option>
-                    <option value="EUR">EUR</option>
-                    <option value="USD">USD</option>
-                    <option value="CZK">CZK</option>
-                </select>
-            </label>
+                    {currencies.map(currency => (
+                        <option key={currency.value} value={currency.value}>{currency.value}</option>
+                    ))}
+            </select></label>
             <button className="conventer__button">Przelicz</button>
             <Result result={result} toCurrency={toCurrency} />
         </form>
