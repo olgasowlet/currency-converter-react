@@ -1,8 +1,8 @@
-#Currency converter made in React
+# Currency converter made in React
 
 Project was created as a part of YouCode course
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Demo: https://olgasowlet.github.io/currency-converter-react/
 
 ## Available Scripts
 
