@@ -6,8 +6,8 @@ import { currencies } from "../currencies";
 const Form = (props) => {
 
     const [amount, setAmount] = useState(0);
-    const [fromCurrency, setFromCurrency] = useState("");
-    const [toCurrency, setToCurrency] = useState("");
+    const [fromCurrency, setFromCurrency] = useState(currencies[0].value);
+    const [toCurrency, setToCurrency] = useState(currencies[0].value);
     const [result, setResult] = useState(0);
 
     const onInputChange = ({ target }) => setAmount(target.value);
