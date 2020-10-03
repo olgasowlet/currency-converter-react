@@ -28,7 +28,7 @@ const Form = (props) => {
                 amount = amount / rate;
             };
         };
-        return setResult(amount);
+        setResult(amount);
     };
 
     const onFormSubmit = (event) => {
