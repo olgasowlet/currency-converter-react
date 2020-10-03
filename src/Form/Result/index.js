@@ -1,8 +1,8 @@
 import React from "react";
 import "./style.css";
 
-const Result = ({ result, toCurrency }) => (
-    <div className="conventer__result">{result.toFixed(2)}&nbsp;{toCurrency}</div>
+const Result = ({ result }) => (
+    <div className="conventer__result">{!!result ? <> {result.amount.toFixed(2)}&nbsp;{result.toCurrency} </> : " "}</div>
 );
 
 

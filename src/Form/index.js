@@ -8,7 +8,7 @@ const Form = (props) => {
     const [amount, setAmount] = useState(0);
     const [fromCurrency, setFromCurrency] = useState(currencies[0].value);
     const [toCurrency, setToCurrency] = useState(currencies[0].value);
-    const [result, setResult] = useState(0);
+    const [result, setResult] = useState();
 
     const onInputChange = ({ target }) => setAmount(target.value);
 
@@ -28,7 +28,10 @@ const Form = (props) => {
                 amount = amount / rate;
             };
         };
-        setResult(amount);
+        setResult({
+            amount: +amount,
+            toCurrency,
+        });
     };
 
     const onFormSubmit = (event) => {
@@ -57,7 +60,7 @@ const Form = (props) => {
                     ))}
             </select></label>
             <button className="conventer__button">Przelicz</button>
-            <Result result={result} toCurrency={toCurrency} />
+            <Result result={result} />
         </form>
     );
 };
