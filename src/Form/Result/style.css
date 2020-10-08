@@ -1,4 +1,4 @@
-.conventer__result {
+.converter__result {
     color: #fabc2a;
     font-size: 50px;
     text-align: center;
@@ -6,7 +6,7 @@
 }
 
 @media (max-width: 769px) {
-    .conventer__result {
+    .converter__result {
         font-size: 50px;
         margin: 10px auto;
     }

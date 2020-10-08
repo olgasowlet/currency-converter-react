@@ -1,14 +1,14 @@
-.conventer {
+.converter {
     font-size: 30px;
     text-align: center;
     padding: 10px;
 }
 
-.conventer__label {
+.converter__label {
     margin: 5px 20px;
 }
 
-.conventer__input, .conventer__select {
+.converter__input, .converter__select {
     background-color: transparent;
     color: #fabc2a;
     border: 1px solid #fabc2a;
@@ -18,11 +18,11 @@
     height: 40px;
 }
 
-.conventer__input {
+.converter__input {
     width: 150px;
 }
 
-.conventer__button {
+.converter__button {
     margin: 20px 0;
     background-color: #fabc2a;
     text-transform: uppercase;
@@ -32,38 +32,38 @@
     border: none;
 }
 
-.conventer__button:hover {
+.converter__button:hover {
     color: #fabc2a;
     background-color: #262626;
     outline: 2px solid #fabc2a;
 }
 
 @media (max-width: 769px) {
-    .conventer {
+    .converter {
         padding: 0px;
         font-size: 20px;
         margin: auto;
         width: 200px;
     }
-    .conventer__label {
+    .converter__label {
         display: block;
         margin: 30px 0;
         width: unset;
         height: unset;
     }
-    .conventer__input {
+    .converter__input {
         width: 100px;
         height: unset;
         margin: 0px;
     }
-    .conventer__select {
+    .converter__select {
         width: unset;
         height: unset;
         font-size: 20px;
         margin: 0px;
         margin-left: 6px;
     }
-    .conventer__button {
+    .converter__button {
         margin-bottom: 10px;
         padding: 12px;
     }
