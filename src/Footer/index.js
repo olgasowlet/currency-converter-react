@@ -1,12 +1,10 @@
 import React from "react";
-import "./style.css";
+import { StyledFooter } from "./style";
 
 const Footer = () => (
-    <footer className="footer">
-        <div className="footer__div">
-            <p className="footer__paragraph">Pozdrawiam i życzę miłego dnia - Olga ;*</p>
-        </div>
-    </footer>
+    <StyledFooter className="footer">
+        Pozdrawiam i życzę miłego dnia - Olga ;*
+    </StyledFooter>
 );
 
 export default Footer;
