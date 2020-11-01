@@ -1,10 +1,10 @@
 import React from "react";
-import "./style.css";
+import { Title } from "./style";
 
-const Header = ({title}) => (
-    <header className="header">
-        <h1 className="header__title">{title}</h1>
-    </header>
+const Header = ({ title }) => (
+    <>
+        <Title>{title}</Title>
+    </>
 );
 
 export default Header;
