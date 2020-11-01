@@ -1,6 +1,6 @@
 import React from "react";
 import { StyledDate } from "./style";
-import {useCurrentDate, formatDate} from "../useCurrentDate";
+import { useCurrentDate, formatDate } from "../useCurrentDate";
 
 const PlaceForDate = () => {
 

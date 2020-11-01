@@ -29,4 +29,4 @@ const formatDate = (date) => {
         });
 };
 
-export {useCurrentDate, formatDate};
+export { useCurrentDate, formatDate };
