@@ -1,8 +1,8 @@
 import React from "react";
-import "./style.css";
+import { StyledMain } from "./style";
 
 const Main = (props) => (
-<main className="main">{props.children}</main>
+    <StyledMain>{props.children}</StyledMain>
 );
 
 export default Main;
