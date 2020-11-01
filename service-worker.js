@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/currency-converter-react/precache-manifest.3b1cd96f59854fc42786463089ea77e5.js"
+  "/currency-converter-react/precache-manifest.bb111016c3b963c4fbc87a6b79388383.js"
 );
 
 self.addEventListener('message', (event) => {
