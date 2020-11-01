@@ -1,8 +1,8 @@
 import React from "react";
-import "./style.css";
+import { StyledResult } from "./style";
 
 const Result = ({ result }) => (
-    <div className="converter__result">{!!result ? <> {result.amount.toFixed(2)}&nbsp;{result.toCurrency} </> : " "}</div>
+    <StyledResult>{!!result ? <> {result.amount.toFixed(2)}&nbsp;{result.toCurrency} </> : " "}</StyledResult>
 );
 
 

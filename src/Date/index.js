@@ -28,7 +28,7 @@ const PlaceForDate = () => {
     }, []);
 
     return (
-        <StyledDate className="dateContainer">
+        <StyledDate>
             <span>Dzisiaj jest {formatDate(date)}</span>
         </StyledDate>
     );

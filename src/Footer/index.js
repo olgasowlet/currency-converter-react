@@ -2,7 +2,7 @@ import React from "react";
 import { StyledFooter } from "./style";
 
 const Footer = () => (
-    <StyledFooter className="footer">
+    <StyledFooter>
         Pozdrawiam i życzę miłego dnia - Olga ;*
     </StyledFooter>
 );
