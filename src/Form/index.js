@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./style.css";
+import { StyledForm, Label, StyledInput, Select, Button } from "./style";
 import Result from "./Result";
 import { currencies } from "../currencies";
 
@@ -41,27 +41,27 @@ const Form = (props) => {
     };
 
     return (
-        <form className="converter" onSubmit={onFormSubmit}>
-            <label className="converter__label">
-                Kwota: <input className="converter__input" value={amount} onChange={onInputChange} type="number" min="0" required />
-            </label>
-            <label className="converter__label">
+        <StyledForm onSubmit={onFormSubmit}>
+            <Label>
+                Kwota: <StyledInput value={amount} onChange={onInputChange} type="number" min="0" required />
+            </Label>
+            <Label>
                 Z:
-            <select className="converter__select" value={fromCurrency} onChange={onFirstSelectChange} name="currency" required>
+            <Select className="converter__select" value={fromCurrency} onChange={onFirstSelectChange} name="currency" required>
                     {currencies.map(currency => (
                         <option key={currency.value} value={currency.value}>{currency.value}</option>
                     ))}
-            </select></label>
-            <label className="converter__label">
+            </Select></Label>
+            <Label>
                 Na:
-            <select className="converter__select" value={toCurrency} onChange={onSecondSelectChange} name="currency" required>
+            <Select className="converter__select" value={toCurrency} onChange={onSecondSelectChange} name="currency" required>
                     {currencies.map(currency => (
                         <option key={currency.value} value={currency.value}>{currency.value}</option>
                     ))}
-            </select></label>
-            <button className="converter__button">Przelicz</button>
+            </Select></Label>
+            <Button className="converter__button">Przelicz</Button>
             <Result result={result} />
-        </form>
+        </StyledForm>
     );
 };
 
