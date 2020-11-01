@@ -1,35 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { StyledDate } from "./style";
-
-const formatDate = (date) => {
-    return date.toLocaleString("pl",
-        {
-            weekday: "long",
-            day: "numeric",
-            month: "long",
-            year: "numeric",
-            hour: "numeric",
-            minute: "numeric",
-            second: "numeric"
-        });
-};
+import {useCurrentDate, formatDate} from "../useCurrentDate";
 
 const PlaceForDate = () => {
-    const [date, setDate] = useState(new Date());
 
-    useEffect(() => {
-        const intervalID = setInterval(() => {
-            setDate(new Date());
-        }, 1000);
-
-        return () => {
-            clearInterval(intervalID);
-        };
-    }, []);
+    const currentDate = useCurrentDate();
 
     return (
         <StyledDate>
-            <span>Dzisiaj jest {formatDate(date)}</span>
+            <span>Dzisiaj jest {formatDate(currentDate)}</span>
         </StyledDate>
     );
 };
