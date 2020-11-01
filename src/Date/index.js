@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./style.css";
+import { StyledDate } from "./style";
 
 const formatDate = (date) => {
     return date.toLocaleString("pl",
@@ -28,9 +28,9 @@ const PlaceForDate = () => {
     }, []);
 
     return (
-        <div className="dateContainer">
+        <StyledDate className="dateContainer">
             <span>Dzisiaj jest {formatDate(date)}</span>
-        </div>
+        </StyledDate>
     );
 };
 
