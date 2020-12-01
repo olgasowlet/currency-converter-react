@@ -3,6 +3,7 @@ import { StyledForm, Label, StyledInput, Select, Button } from "./style";
 import Result from "./Result";
 import { currencies } from "../currencies";
 
+
 const Form = (props) => {
 
     const [amount, setAmount] = useState(0);
@@ -51,14 +52,14 @@ const Form = (props) => {
                     {currencies.map(currency => (
                         <option key={currency.value} value={currency.value}>{currency.value}</option>
                     ))}
-            </Select></Label>
+                </Select></Label>
             <Label>
                 Na:
             <Select className="converter__select" value={toCurrency} onChange={onSecondSelectChange} name="currency" required>
                     {currencies.map(currency => (
                         <option key={currency.value} value={currency.value}>{currency.value}</option>
                     ))}
-            </Select></Label>
+                </Select></Label>
             <Button className="converter__button">Przelicz</Button>
             <Result result={result} />
         </StyledForm>
