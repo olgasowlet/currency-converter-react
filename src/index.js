@@ -4,14 +4,6 @@ import { GlobalStyle } from "./GlobalStyle";
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-import axios from "axios";
-
-axios.get("https://api.exchangeratesapi.io/latest?base=PLN")
-  .then(response => {
-    const currenciesAPI = JSON.stringify(response.data);
-    console.log(currenciesAPI);
-  });
-
 
 ReactDOM.render(
   <React.StrictMode>
