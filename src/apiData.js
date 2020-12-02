@@ -1,21 +1,34 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-export const GetApiData = () => {
-    const [currency, setCurrency] = useState();
+const useApiData = () => {
+    const [dataAPI, setDataAPI] = useState({
+        status: "ładowanie"
+    });
 
     useEffect(() => {
-        axios.get("https://api.exchangeratesapi.io/latest?base=PLN")
-            .then((response) => {
-                setCurrency({
-                    value: response.data.rates,
-                    date: response.data.date
-                })
-            })
-    }, []);
+        const getDataFromApi = async() => {
+            try {
+                const response = await axios.get("https://api.exchangeratesapi.io/latest?base=PLN");
+                console.log(response);
 
-    console.log(currency);
+                const { rates, base, date } = await response.data;
 
-    return currency;
+                setDataAPI({
+                    status: "Dane zostały załadowane",
+                    rates,
+                    base,
+                    date
+                });
+            } catch (error) {
+                console.error(error);
+            }
+        }
+        setTimeout(getDataFromApi, 2000);
+    }, [])
+    console.log(dataAPI);
+    return dataAPI;
 };
 
+
+export { useApiData };

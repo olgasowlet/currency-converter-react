@@ -2,14 +2,15 @@ import React, { useState } from "react";
 import { StyledForm, Label, StyledInput, Select, Button } from "./style";
 import Result from "./Result";
 import { currencies } from "../currencies";
-
+import { useApiData } from "../apiData";
 
 const Form = (props) => {
-
     const [amount, setAmount] = useState(0);
     const [fromCurrency, setFromCurrency] = useState(currencies[0].value);
     const [toCurrency, setToCurrency] = useState(currencies[0].value);
     const [result, setResult] = useState();
+
+    useApiData();
 
     const onInputChange = ({ target }) => setAmount(target.value);
 
