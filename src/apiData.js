@@ -10,7 +10,6 @@ const useApiData = () => {
         const getDataFromApi = async() => {
             try {
                 const response = await axios.get("https://api.exchangeratesapi.io/latest?base=PLN");
-                console.log(response);
 
                 const { rates, base, date } = await response.data;
 
@@ -22,6 +21,10 @@ const useApiData = () => {
                 });
             } catch (error) {
                 console.error(error);
+                
+                setDataAPI({
+                    status: "Wystąpił błąd"
+                })
             }
         }
         setTimeout(getDataFromApi, 2000);

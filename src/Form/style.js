@@ -79,4 +79,9 @@ const Button = styled.button`
     }
 `;
 
-export { StyledForm, Label, StyledInput, Select, Button };
+const Loading = styled.div`
+    text-align: center;
+    color: #fabc2a
+`;
+
+export { StyledForm, Label, StyledInput, Select, Button, Loading};

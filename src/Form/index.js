@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyledForm, Label, StyledInput, Select, Button } from "./style";
+import { StyledForm, Label, StyledInput, Select, Button, Loading } from "./style";
 import Result from "./Result";
 import { currencies } from "../currencies";
 import { useApiData } from "../apiData";
@@ -9,8 +9,7 @@ const Form = (props) => {
     const [fromCurrency, setFromCurrency] = useState(currencies[0].value);
     const [toCurrency, setToCurrency] = useState(currencies[0].value);
     const [result, setResult] = useState();
-
-    useApiData();
+    const rates = useApiData();
 
     const onInputChange = ({ target }) => setAmount(target.value);
 
@@ -44,25 +43,30 @@ const Form = (props) => {
 
     return (
         <StyledForm onSubmit={onFormSubmit}>
-            <Label>
-                Kwota: <StyledInput value={amount} onChange={onInputChange} type="number" min="0" required />
-            </Label>
-            <Label>
-                Z:
+            {rates.status === "ładowanie" ? (<Loading>Ładowanie..</Loading>) : (
+                <>
+                    <Label>
+                        Kwota: <StyledInput value={amount} onChange={onInputChange} type="number" min="0" required />
+                    </Label>
+                    <Label>
+                        Z:
             <Select className="converter__select" value={fromCurrency} onChange={onFirstSelectChange} name="currency" required>
-                    {currencies.map(currency => (
-                        <option key={currency.value} value={currency.value}>{currency.value}</option>
-                    ))}
-                </Select></Label>
-            <Label>
-                Na:
+                            {currencies.map(currency => (
+                                <option key={currency.value} value={currency.value}>{currency.value}</option>
+                            ))}
+                        </Select></Label>
+                    <Label>
+                        Na:
             <Select className="converter__select" value={toCurrency} onChange={onSecondSelectChange} name="currency" required>
-                    {currencies.map(currency => (
-                        <option key={currency.value} value={currency.value}>{currency.value}</option>
-                    ))}
-                </Select></Label>
-            <Button className="converter__button">Przelicz</Button>
-            <Result result={result} />
+                            {currencies.map(currency => (
+                                <option key={currency.value} value={currency.value}>{currency.value}</option>
+                            ))}
+                        </Select>
+                    </Label>
+                    <Button className="converter__button">Przelicz</Button>
+                    <Result result={result} />
+                </>
+            )}
         </StyledForm>
     );
 };
