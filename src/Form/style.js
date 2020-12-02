@@ -84,4 +84,9 @@ const Loading = styled.div`
     color: #fabc2a
 `;
 
-export { StyledForm, Label, StyledInput, Select, Button, Loading};
+const Error = styled.div`
+    text-align: center;
+    color: #fabc2a
+`;
+
+export { StyledForm, Label, StyledInput, Select, Button, Loading, Error};

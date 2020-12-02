@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyledForm, Label, StyledInput, Select, Button, Loading } from "./style";
+import { StyledForm, Label, StyledInput, Select, Button, Loading, Error } from "./style";
 import Result from "./Result";
 import { currencies } from "../currencies";
 import { useApiData } from "../apiData";
@@ -43,7 +43,7 @@ const Form = (props) => {
 
     return (
         <StyledForm onSubmit={onFormSubmit}>
-            {rates.status === "ładowanie" ? (<Loading>Ładowanie..</Loading>) : (
+            {rates.status === "ładowanie" ? (<Loading>Ładowanie..</Loading>) : (rates.status === "Wystąpił błąd" ? (<Error>Coś się popsuło :/</Error>) : (
                 <>
                     <Label>
                         Kwota: <StyledInput value={amount} onChange={onInputChange} type="number" min="0" required />
@@ -66,7 +66,7 @@ const Form = (props) => {
                     <Button className="converter__button">Przelicz</Button>
                     <Result result={result} />
                 </>
-            )}
+            ))}
         </StyledForm>
     );
 };
