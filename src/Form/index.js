@@ -6,10 +6,10 @@ import { useApiData } from "../apiData";
 
 const Form = (props) => {
     const [amount, setAmount] = useState(0);
-    const [fromCurrency, setFromCurrency] = useState(currencies[0].value);
-    const [toCurrency, setToCurrency] = useState(currencies[0].value);
+    const [fromCurrency, setFromCurrency] = useState("PLN");
+    const [toCurrency, setToCurrency] = useState("EUR");
     const [result, setResult] = useState();
-    const rates = useApiData();
+    const dataApi = useApiData();
 
     const onInputChange = ({ target }) => setAmount(target.value);
 
@@ -43,7 +43,7 @@ const Form = (props) => {
 
     return (
         <StyledForm onSubmit={onFormSubmit}>
-            {rates.status === "ładowanie" ? (<Loading>Ładowanie..</Loading>) : (rates.status === "Wystąpił błąd" ? (<Error>Coś się popsuło :/</Error>) : (
+            {dataApi.status === "ładowanie" ? (<Loading>Ładowanie..</Loading>) : (dataApi.status === "Wystąpił błąd" ? (<Error>Coś się popsuło :/</Error>) : (
                 <>
                     <Label>
                         Kwota: <StyledInput value={amount} onChange={onInputChange} type="number" min="0" required />
@@ -51,15 +51,15 @@ const Form = (props) => {
                     <Label>
                         Z:
             <Select className="converter__select" value={fromCurrency} onChange={onFirstSelectChange} name="currency" required>
-                            {currencies.map(currency => (
-                                <option key={currency.value} value={currency.value}>{currency.value}</option>
+                            {Object.keys(dataApi.rates).map(currency => (
+                                <option key={currency} value={currency}>{currency}</option>
                             ))}
                         </Select></Label>
                     <Label>
                         Na:
             <Select className="converter__select" value={toCurrency} onChange={onSecondSelectChange} name="currency" required>
-                            {currencies.map(currency => (
-                                <option key={currency.value} value={currency.value}>{currency.value}</option>
+            {Object.keys(dataApi.rates).map(currency => (
+                                <option key={currency} value={currency}>{currency}</option>
                             ))}
                         </Select>
                     </Label>

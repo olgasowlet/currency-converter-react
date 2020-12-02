@@ -21,7 +21,7 @@ const useApiData = () => {
                 });
             } catch (error) {
                 console.error(error);
-                
+
                 setDataAPI({
                     status: "Wystąpił błąd"
                 })
@@ -29,7 +29,7 @@ const useApiData = () => {
         }
         setTimeout(getDataFromApi, 2000);
     }, [])
-    console.log(dataAPI);
+    // console.log(dataAPI);
     return dataAPI;
 };
 
