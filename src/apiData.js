@@ -27,7 +27,7 @@ const useApiData = () => {
                 })
             }
         }
-        setTimeout(getDataFromApi, 2000);
+        setTimeout(getDataFromApi, 1000);
     }, [])
     // console.log(dataAPI);
     return dataAPI;

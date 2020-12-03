@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { StyledForm, Label, StyledInput, Select, Button, Loading, Error } from "./style";
 import Result from "./Result";
-import { currencies } from "../currencies";
 import { useApiData } from "../apiData";
 
 const Form = (props) => {
@@ -18,14 +17,14 @@ const Form = (props) => {
     const onSecondSelectChange = ({ target }) => setToCurrency(target.value);
 
     const calculateCurrency = (fromCurrency, toCurrency, amount) => {
-        for (const currency of currencies) {
-            let rate = currency.rate;
+        for (const currency in dataApi.rates) {
+            let rate = dataApi.rates[currency];
 
-            if (fromCurrency === currency.value) {
+            if (fromCurrency === currency) {
                 amount *= rate;
             };
 
-            if (toCurrency === currency.value) {
+            if (toCurrency === currency) {
                 amount = amount / rate;
             };
         };
