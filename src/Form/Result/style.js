@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledResult = styled.div`
-    color: #fabc2a;
+    color: ${({theme}) => theme.fontColor};
     font-size: 50px;
     text-align: center;
     margin-top: 20px;

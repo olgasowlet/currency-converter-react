@@ -26,8 +26,8 @@ const Label = styled.label`
 
 const StyledInput = styled.input`
     background-color: transparent;
-    color: #fabc2a;
-    border: 1px solid #fabc2a;
+    color: ${({theme}) => theme.fontColor};
+    border: 1px solid ${({theme}) => theme.fontColor};
     width: 150px;
     margin-bottom: 20px;
     margin-left: 7px;
@@ -42,8 +42,8 @@ const StyledInput = styled.input`
 
 const Select = styled.select`
     background-color: transparent;
-    color: #fabc2a;
-    border: 1px solid #fabc2a;
+    color: ${({theme}) => theme.fontColor};
+    border: 1px solid ${({theme}) => theme.fontColor};
     width: 100px;
     margin-bottom: 20px;
     margin-left: 7px;
@@ -60,17 +60,17 @@ const Select = styled.select`
 
 const Button = styled.button`
     margin: 20px 0;
-    background-color: #fabc2a;
+    background-color: ${({theme}) => theme.fontColor};
     text-transform: uppercase;
-    color: #262626;
+    color: ${({theme}) => theme.secondColor};
     padding: 5px;
     font-weight: bold;
     border: none;
 
     &:hover {
-        color: #fabc2a;
-    background-color: #262626;
-    outline: 2px solid #fabc2a;
+        color: ${({theme}) => theme.fontColor};
+    background-color: ${({theme}) => theme.secondColor};
+    outline: 2px solid ${({theme}) => theme.fontColor};
     }
 
     @media (max-width: 769px) {
@@ -81,12 +81,12 @@ const Button = styled.button`
 
 const Loading = styled.div`
     text-align: center;
-    color: #fabc2a
+    color: ${({theme}) => theme.fontColor}
 `;
 
 const Error = styled.div`
     text-align: center;
-    color: #fabc2a
+    color: ${({theme}) => theme.fontColor}
 `;
 
 export { StyledForm, Label, StyledInput, Select, Button, Loading, Error};

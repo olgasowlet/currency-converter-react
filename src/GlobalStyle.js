@@ -9,3 +9,8 @@ export const GlobalStyle = createGlobalStyle`
   box-sizing: inherit;
 }
 `;
+
+export const theme = {
+  fontColor: "#fabc2a",
+  secondColor: "#262626"
+};
