@@ -21,11 +21,11 @@ const Form = (props) => {
             let rate = dataApi.rates[currency];
 
             if (fromCurrency === currency) {
-                amount *= rate;
+                amount = amount / rate;
             };
 
             if (toCurrency === currency) {
-                amount = amount / rate;
+                amount *= rate;
             };
         };
         setResult({
