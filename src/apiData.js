@@ -9,7 +9,7 @@ const useApiData = () => {
     useEffect(() => {
         const getDataFromApi = async() => {
             try {
-                const response = await axios.get("https://api.exchangeratesapi.io/latest?base=PLN");
+                const response = await axios.get("https://api.exchangerate.host/latest?base=PLN");
 
                 const { rates, base, date } = await response.data;
 
@@ -29,7 +29,8 @@ const useApiData = () => {
         }
         setTimeout(getDataFromApi, 1000);
     }, [])
-    // console.log(dataAPI);
+
+    console.log(dataAPI);
     return dataAPI;
 };
 
