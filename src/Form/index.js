@@ -3,7 +3,7 @@ import { StyledForm, Label, StyledInput, Select, Button, Loading, Error } from "
 import Result from "./Result";
 import { useApiData } from "../apiData";
 
-const Form = (props) => {
+const Form = () => {
     const [amount, setAmount] = useState(0);
     const [fromCurrency, setFromCurrency] = useState("PLN");
     const [toCurrency, setToCurrency] = useState("EUR");
