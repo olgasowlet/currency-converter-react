@@ -30,7 +30,6 @@ const useApiData = () => {
         setTimeout(getDataFromApi, 1000);
     }, [])
 
-    console.log(dataAPI);
     return dataAPI;
 };
 
