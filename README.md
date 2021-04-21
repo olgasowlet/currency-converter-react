@@ -13,7 +13,6 @@ Currency converter uses [exchangerate API](https://exchangerate.host/#/#docs)
 ![js icon](https://raw.githubusercontent.com/olgasowlet/currency-converter-react/master/src/images/js.png "JavaScript")
 ![react icon](https://github.com/olgasowlet/currency-converter-react/blob/master/src/images/react.png?raw=true "React")
 
----
 
 ## Available Scripts
 
